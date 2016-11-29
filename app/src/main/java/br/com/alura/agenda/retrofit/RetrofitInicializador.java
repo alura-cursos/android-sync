@@ -1,5 +1,6 @@
-package br.com.alura.agenda;
+package br.com.alura.agenda.retrofit;
 
+import br.com.alura.agenda.services.AlunoService;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
@@ -17,5 +18,8 @@ public class RetrofitInicializador {
                 .addConverterFactory(JacksonConverterFactory.create())
                 .build();
     }
-    
+
+    public AlunoService getAlunoService() {
+        return retrofit.create(AlunoService.class);
+    }
 }
